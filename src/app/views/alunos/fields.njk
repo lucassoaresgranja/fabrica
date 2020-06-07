@@ -1,0 +1,122 @@
+            <div class="item">
+                <div>Avatar URL</div>
+                <input 
+                    type="url"
+                    name="avatar_url"
+                    placeholder="http://"
+                    value="{{aluno.avatar_url}}"
+                >
+            </div>
+
+            <div class="item">
+                <div>Aluno</div>
+                <input 
+                    type="text"
+                    name="nome_completo"
+                    placeholder="Nome do Aluno"
+                    value="{{aluno.nome_completo}}"
+                >
+            </div>
+
+            <div class="item">
+                <div>Matricula</div>
+                <input 
+                    type="text"
+                    name="matricula"
+                    placeholder="Matricula"
+                    value="{{aluno.matricula}}"
+                >
+            </div>
+            
+
+            <div class="item">
+                <div>Email</div>
+                <input 
+                    type="text"
+                    name="email"
+                    placeholder="Email"
+                    value="{{aluno.email}}"
+                >
+            </div>
+
+            <div class="item">
+                <div>Telefone</div>
+                <input 
+                    type="text"
+                    name="telefone"
+                    placeholder="Telefone"
+                    value="{{aluno.telefone}}"
+                >
+            </div>
+
+            <div class="item">
+                <div>Cargo</div>
+                <div>
+                    <select name="cargo">
+
+                        <option value="Estagiario" {% if disciplina.cargo == "estagiario" %} selected="selected" {% endif %}>Estagiario</option>
+
+                        <option value="Técnico Treinee" {% if disciplina.cargo == "tecnico_treinee" %} selected="selected" {% endif %}>Técnico Treinee</option>
+
+                        <option value="Gerente" {% if disciplina.cargo == "gerente" %} selected="selected" {% endif %}>Gerente</option>
+
+                        <option value="Diretor Executivo" {% if disciplina.cargo == "diretor_executivo" %} selected="selected" {% endif %}>Diretor Executivo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Data de Nascimento</div>
+                <input 
+                    type="date"
+                    name="data_nascimento"
+                    value="{{aluno.data_nascimento}}"                
+                >
+            </div>
+            
+
+           <!-- <div class="item">
+                <div>Sexo</div>
+                <div>
+                    
+                    <span>
+                        <input 
+                            type="radio" 
+                            name="gender" 
+                            value="M" 
+                            {% if aluno.gender == 'M' %}
+                                checked
+                            {% endif %}
+                        >
+                            Masculino
+                    </span>
+                    x
+                    <span>
+                        <input 
+                            type="radio" 
+                            name="gender" 
+                            value="F"
+                            {% if aluno.gender == 'F' %}
+                                checked
+                            {% endif %}
+                        >
+                            Feminino
+                    </span>
+                </div>
+            </div>
+
+            
+
+            <div class="item">
+                <div>Area de Atuação</div>
+                <div>                
+                    <input 
+                        type="text" 
+                        name="services"
+                        placeholder="Digite os Serviços Prestados"
+                        value="{{aluno.services}}"
+                    >
+                </div>
+            </div>
+            -->
+            <button type="submit">Salvar</button>

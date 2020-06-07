@@ -1,0 +1,36 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+        <section class="avatar" style="background: url({{disciplina.avatar_url}})
+                    no-repeat center center / cover"></section>
+
+        <section class="details">
+            <h3>Detalhes</h3>
+            <div class="item">
+                <div>Disciplina</div>
+                <div>{{disciplina.nome_disciplina}}</div>
+            </div>
+
+            <div class="item">
+                <div>Bimestre</div>
+                <div>{{disciplina.bimestre}}</div>
+            </div>
+
+            <div class="item">
+                <div>Nota</div>
+                <div>{{disciplina.valor_nota}}</div>
+            </div>
+            
+             <div class="item">
+                <div>Aluno</div>
+                <div>{{disciplina.aluno_nome_completo}}</div>
+            </div> 
+
+            <a href="/disciplinas/{{disciplina.id}}/edit" class="button">Editar</a>
+
+        </section>
+    </div>
+
+{% endblock content %}

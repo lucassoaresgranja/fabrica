@@ -1,0 +1,66 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+
+    <div class="card">
+          <section class="avatar" style="background: url({{disciplina.avatar_url}})"></section>
+        <section class="details">
+            <h3>Detalhes</h3>
+            
+            <div class="item">
+                <div>Aluno</div>
+                <div>{{aluno.nome_completo}}</div>
+            </div>
+
+            <div class="item">
+                <div>Matricula</div>
+                <div>{{aluno.matricula}}</div>
+            </div>
+
+            <div class="item">
+                <div>Email</div>
+                <div>{{aluno.email}}</div>
+            </div> 
+
+            <div class="item">
+                <div>Telefone</div>
+                <div>{{aluno.telefone}}</div>
+            </div>
+
+            <div class="item">
+                <div>Cargo</div>
+                <div>{{aluno.cargo}}</div>
+            </div>   
+
+            <div class="item">
+                <div>Idade</div>
+                <div>{{aluno.age}}</div>
+            </div>
+            <!--
+            <div class="item">
+                <div>Sexo</div>
+                <div>{{"Masculino" if aluno.gender == "M" else "Feminino"}}</div>
+            </div>
+            -->
+
+            <!--
+            <div class="item">
+                <div>Acompanhamento</div>
+                <div>
+                    {% for service in aluno.services %}
+                        <span>{{service}}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="item">
+                <div>Desde</div>
+                <div>{{aluno.created_at}}</div>
+            </div>
+            -->
+            <a href="/alunos/{{aluno.id}}/edit" class="button">Editar</a>
+
+        </section>
+    </div>
+
+{% endblock content %}

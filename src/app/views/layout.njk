@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        {% block head %}
+            <title>Layout</title>
+        {% endblock %}
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+
+    <body>
+        <header>
+            <div class="links">
+                <a href="/alunos">Alunos</a>
+                <a href="/disciplinas">Disciplinas</a>
+            </div>
+        </header>
+
+        <div class="class"></div>
+
+        {% block content %}{% endblock %}
+
+        {% block footer %}{% endblock %}
+
+        <script src="/js/scripts.js"></script>
+
+    </body>
+</html>

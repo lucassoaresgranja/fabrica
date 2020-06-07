@@ -1,0 +1,55 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Disciplinas</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="card table-container">
+        <div class="header">
+            <a class="button" href="/disciplinas/create">Novo</a>
+            <form action="/disciplinas" method="GET">
+                <input 
+                type="text" 
+                name="filter" 
+                placeholder="Aluno ou Email"
+                value="{{filter}}">
+                <button type="submit">Filtrar</button>
+            </form>
+        </div>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Disciplina</th>
+                    <th>Bimestre</th>
+                    <th>Valor da Nota</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for disciplina in disciplinas %}
+                    <tr>
+                        <td>{{disciplina.id}}</td>
+                        <td>{{disciplina.nome_disciplina}}</td>
+                        <td>{{disciplina.bimestre}}</td>
+                        <td>{{disciplina.valor_nota}}</td>
+                        <td>
+                            <a href="/disciplinas/{{disciplina.id}}">Ver</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+         <div 
+            class="pagination" 
+            data-page={{pagination.page}} 
+            data-total={{pagination.total}} 
+            data-filter={{filter}}>
+        </div>
+    </div>
+
+{% endblock content %}

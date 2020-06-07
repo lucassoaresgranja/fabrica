@@ -1,0 +1,49 @@
+<div class="item">
+    <div>Aluno</div>
+    <div>
+        <select name="aluno">
+            {% for aluno in alunoOptions %}
+                <option value="{{aluno.id}}" {% if disciplina.aluno_id == aluno.id %} selected="selected" {% endif %}>{{aluno.nome_completo}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Nome Disciplina</div>
+    <div>
+        <select name="nome_disciplina">
+
+            <option value="Matematica" {% if disciplina.nome_disciplina == "Matematica" %} selected="selected" {% endif %}>Matematica</option>
+
+            <option value="Física" {% if disciplina.nome_disciplina == "Física" %} selected="selected" {% endif %}>Física</option>
+
+            <option value="Química" {% if disciplina.nome_disciplina == "Química" %} selected="selected" {% endif %}>Química</option>
+
+            <option value="Português" {% if disciplina.nome_disciplina == "Português" %} selected="selected" {% endif %}>Português</option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Bimestre</div>
+    <div>
+        <select name="bimestre">
+
+            <option value="1º" {% if disciplina.bimestre == "1º" %} selected="selected" {% endif %}>1º Bimestre</option>
+
+            <option value="2º" {% if disciplina.bimestre == "2º" %} selected="selected" {% endif %}>2º Bimestre</option>
+
+            <option value="3º" {% if disciplina.bimestre == "3º" %} selected="selected" {% endif %}>3º Bimestre</option>
+
+            <option value="4º" {% if disciplina.bimestre == "4º" %} selected="selected" {% endif %}>4º Bimestre</option>
+        </select>
+    </div>
+</div>
+
+<div class="item">
+    <div>Valor Nota</div>
+    <input type="number" name="valor_nota" value="{{disciplina.valor_nota}}">
+</div>
+
+<button type="submit">Salvar</button>

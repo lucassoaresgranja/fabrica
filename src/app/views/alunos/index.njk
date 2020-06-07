@@ -1,0 +1,62 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Alunos</title>
+{% endblock %}
+
+{% block content %}
+
+    <div class="card table-container">
+
+        <div class="header">
+            <a class="button" href="/alunos/create">Novo</a>
+            <form action="/alunos" method="GET">
+                <input 
+                type="text"
+                name="filter"
+                placeholder="Nome ou Atendimento"
+                value="{{filter}}"
+                >
+                <button type="submit">Filtrar</button>
+            </form>
+        </div>
+        
+        <table width="100%">
+            <thead>
+                <tr>
+                    <th>Aluno</th>
+                    <th>Matricula</th>
+                    <th>Telefone</th>
+                    <th>Cargo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for aluno in alunos %}
+                    <tr>
+                        <td>
+                            <span style="background-image: url({{aluno.avatar_url}})"></span>
+                            {{aluno.nome_completo}}
+                        </td>
+                        <td>{{aluno.matricula}}</td>
+                        <td>{{aluno.telefone}}</td>
+                        <td>{{aluno.cargo}}</td>
+                        <td>
+                            <a href="/alunos/{{aluno.id}}">Ver</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+        <div 
+            class="pagination" 
+            data-page={{pagination.page}} 
+            data-total={{pagination.total}} 
+            data-filter={{filter}}>
+        </div>
+    </div>
+
+{% endblock content %}
